@@ -170,6 +170,7 @@ export const sendNotification = async (message: string) => {
   console.log("Sending notification", message);
   message = replaceEnvironmentVariables(message);
 
+  console.log("channels.email is:", channels.email);
   if (channels.email) {
     console.log("Sending email");
     try {
@@ -247,4 +248,5 @@ export const sendNotification = async (message: string) => {
     }
     console.log("Finished sending Telegram");
   }
+  console.log("Finished sending all notifications.");
 };
